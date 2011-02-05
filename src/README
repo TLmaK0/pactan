@@ -1,0 +1,15 @@
+Windows environment:
+Install msys and mingw https://sourceforge.net/projects/mingw/files/
+Install glut32 http://www.xmission.com/~nate/glut.html
+Install ftgl https://sourceforge.net/projects/ftgl/develop
+Install freetype2 http://www.freetype.org/index2.html
+
+Set enviroment variables before starts eclipse: 
+
+LIBRARY_PATH = C:\glut;C:\ftgl-2.1.3~rc5\msvc\build;C:\msys\1.0\local\lib;C:\freetype\lib
+
+CPLUS_INCLUDE_PATH =
+C:\ftgl-2.1.3~rc5\src;C:\freetype\include;C:\msys\1.0\local\include;C:\glut;C:\freetype\include\freetype2;
+
+
+PATH = C:\glut;C:\msys\1.0\local\bin;
