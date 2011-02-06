@@ -3,6 +3,7 @@ Install msys and mingw https://sourceforge.net/projects/mingw/files/
 Install glut32 http://www.xmission.com/~nate/glut.html
 Install ftgl https://sourceforge.net/projects/ftgl/develop
 Install freetype2 http://www.freetype.org/index2.html
+Install zlib http://www.zlib.net/
 
 Set enviroment variables before starts eclipse: 
 
