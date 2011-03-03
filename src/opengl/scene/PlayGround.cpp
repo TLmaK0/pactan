@@ -54,7 +54,7 @@ namespace opengl{
 
 		void PlayGround::drawWall(){
 			LOG4CXX_TRACE(logger,"Drawing wall");
-			WavefrontObj* obj3D=ManagerResources::instance()->getObject3D("Models3D/wall.obj");
+			WavefrontObj* obj3D=ManagerResources::instance()->getObject3D("resources/models3D/wall.obj");
 
 			RenderManager::instance()->render(obj3D,Vector3D(0,0,0), Vector3D(GAME_SQUARE_SIDE,GAME_SQUARE_SIDE,GAME_SQUARE_SIDE),Vector3D(0,0,0));
 		}

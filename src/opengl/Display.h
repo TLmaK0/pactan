@@ -19,12 +19,14 @@
 #include "../mvc/events/IKeyEvent.h"
 #include "../mvc/events/KeyEvent.h"
 
+#define WINDOW_NAME "Pac-Tan"
+
+
 using std::list;
 using namespace std;
 using namespace mvc::events;
 
 namespace opengl{
-
 
 	class Display{
 		static log4cxx::LoggerPtr logger;

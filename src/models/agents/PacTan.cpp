@@ -11,7 +11,7 @@ namespace models{
 		void PacTan::setDirection(int x, int y){
 			this->directionX=x;
 			this->directionY=y;
-			LOG4CXX_DEBUG(logger, "Set direction: " << x << "," << y);
+			LOG4CXX_TRACE(logger, "Set direction: " << x << "," << y);
 		}
 
 		bool PacTan::isSpecial(){
@@ -21,14 +21,14 @@ namespace models{
 		void PacTan::setSpecial(bool isSpecial){
 			this->_isSpecial=isSpecial;
 			if (isSpecial) this->specialCounter=SPECIAL_COUNTER_START;
-			LOG4CXX_DEBUG(logger, "IsSpecial: " << this->_isSpecial);
+			LOG4CXX_TRACE(logger, "IsSpecial: " << this->_isSpecial);
 		}
 
 		void PacTan::updateState(){
 			if (this->specialCounter!=0){
 				this->specialCounter--;
 				if (this->specialCounter==0) this->setSpecial(false);
-				LOG4CXX_DEBUG(logger, "SpecialCounter: " << this->specialCounter);
+				LOG4CXX_TRACE(logger, "SpecialCounter: " << this->specialCounter);
 			}
 
 

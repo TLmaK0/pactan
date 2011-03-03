@@ -25,7 +25,7 @@ namespace opengl{
 
 		glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
 
-		glutCreateWindow("Simple");
+		glutCreateWindow(WINDOW_NAME);
 
 		glClearColor( 0, 0, 0, 0 );
 

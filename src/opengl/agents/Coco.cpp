@@ -10,7 +10,7 @@ namespace opengl{
 		log4cxx::LoggerPtr Coco::logger(log4cxx::Logger::getLogger("opengl.agents.PacTan"));
 
 		Coco::Coco(){
-			this->wavefrontObj=ManagerResources::instance()->getObject3D("Models3D/phantom.obj");
+			this->wavefrontObj=ManagerResources::instance()->getObject3D("resources/models3D/phantom.obj");
 
 		}
 

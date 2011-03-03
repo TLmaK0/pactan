@@ -29,7 +29,7 @@ namespace controllers{
 		Vector3D possition=this->playGround->getCocosHome();
 		coco->setPosition(possition);
 		coco->setPlayGround(this->playGround);
-		LOG4CXX_DEBUG(logger, "Set coco poss: " << possition.x << "," << possition.y);
+		LOG4CXX_TRACE(logger, "Set coco poss: " << possition.x << "," << possition.y);
 
 		((PlayView*)this->playGroundView)->cocos.push_back(new opengl::agents::Coco());
 		return coco;
@@ -160,7 +160,7 @@ namespace controllers{
 		this->informationModel.push_back(&this->score);
 
 		std::stringstream mapName;
-		mapName << "Maps/map" << actualLevel << ".ptm";
+		mapName << "resources/maps/map" << actualLevel << ".ptm";
 
 		this->playGround->loadMap(mapName.str());
 		this->playGround->setPosition(*new Vector3D(0, 0, 0));

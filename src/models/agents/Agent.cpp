@@ -23,7 +23,7 @@ namespace models{
 		bool Agent::moveAgent(double x, double y){
 			bool result=false;
 			PlayGround::MapBlockType blockType=this->playGround->getBlockTypeAtPossition(x,y);
-			//LOG4CXX_DEBUG(logger,blockType);
+			LOG4CXX_TRACE(logger,blockType);
 			if (blockType!=models::scene::PlayGround::WALL){
 				this->lastPossition=this->_position;
 

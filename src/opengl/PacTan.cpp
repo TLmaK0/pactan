@@ -10,6 +10,6 @@ namespace opengl{
 	log4cxx::LoggerPtr PacTan::logger(log4cxx::Logger::getLogger("opengl.PacTan"));
 
 	PacTan::PacTan(){
-		this->wavefrontObj=ManagerResources::instance()->getObject3D("Models3D/pactan.obj");
+		this->wavefrontObj=ManagerResources::instance()->getObject3D("resources/models3D/pactan.obj");
 	}
 }
