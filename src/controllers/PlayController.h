@@ -32,6 +32,8 @@ using namespace mvc::controller;
 
 using namespace mvc::view;
 
+using namespace models::animation;
+
 namespace controllers{
 	class PlayController:public IController, public ICountDownListener{
 		static const int STEPS_BEFORE_ADD_COCO=3;
@@ -39,7 +41,7 @@ namespace controllers{
 		static log4cxx::LoggerPtr logger;
 
 
-		Timer timer;
+		Timer* timer;
 
 		int addCocoStep;
 		int cocoToStart;

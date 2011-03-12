@@ -37,7 +37,7 @@ namespace opengl{
 	namespace agents{
 		class Agent:public Object3D {
 			static log4cxx::LoggerPtr logger;
-
+			bool _visible;
 			double fpsAnimation, clockDivider, _changePositionTime;
 			float stepLength;
 			Vector3D _lastPosition;
@@ -47,7 +47,10 @@ namespace opengl{
 			Agent();
 			virtual ~Agent();
 			void setPosition(Vector3D position);
+			void setStartPosition(Vector3D position);
 			void draw();
+			bool isVisible();
+			void setVisible(bool visible);
 		};
 	}
 }

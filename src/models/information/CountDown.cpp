@@ -11,12 +11,11 @@ namespace models{
 		log4cxx::LoggerPtr CountDown::logger(log4cxx::Logger::getLogger("models.information.CountDown"));
 
 		CountDown::CountDown(){
-			this->timer.addTimerListener(this);
+			this->timer = new Timer(1000);
 		}
 
 		void CountDown::setStartCounter(int startCounter){
 			this->counter=startCounter;
-			this->timer.setStepTime(1000);
 		}
 
 		void CountDown::timeEvent(){
@@ -44,11 +43,11 @@ namespace models{
 		}
 
 		void CountDown::start(){
-			this->timer.start();
+			this->timer->addTimerListener(this);
 		}
 
 		void CountDown::stop(){
-			this->timer.stop();
+			this->timer->removeTimerListener(this);
 		}
 
 	}

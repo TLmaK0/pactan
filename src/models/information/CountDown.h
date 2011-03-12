@@ -12,11 +12,14 @@
 #include "../animation/ITimerListener.h"
 #include "../IModelObject.h"
 #include "ICountDownListener.h"
+
+using namespace models::animation;
+
 namespace models{
 	namespace information{
 		class CountDown:public ITimerListener, public IModelObject{
 			static log4cxx::LoggerPtr logger;
-			Timer timer;
+			models::animation::Timer* timer;
 			list<ICountDownListener*> countDownListeners;
 		public:
 			CountDown();

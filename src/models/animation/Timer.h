@@ -16,27 +16,28 @@
 //TODO: Implement timer without opengl.Display and IPaintListener...
 #include "../../opengl/Display.h"
 #include "../../mvc/events/IPaintListener.h"
+#include <boost/thread.hpp>
 
 using std::list;
-using namespace models::animation;
 
-class Timer:public IPaintListener{
-	static log4cxx::LoggerPtr logger;
+namespace models{
+	namespace animation{
+		class Timer{
+			static log4cxx::LoggerPtr logger;
 
-	list<ITimerListener*> timerListeners;
-	int timerStep;
-	int timerStepCounter;
-protected:
-	virtual void timerEvent();
-public:
-	Timer();
-	void stop();
-	void start();
-	void paint();
-	void setStepTime(int milliseconds);
-	void addTimerListener(ITimerListener* timerListener);
-	void removeTimerListener(ITimerListener* timerListener);
-};
+			list<ITimerListener*> timerListeners;
+		protected:
+			virtual void timerEvent();
+		public:
+			boost::thread* timerThread;
+			int milliseconds_sleep;
 
+			Timer(int milliseconds);
+			void addTimerListener(ITimerListener* timerListener);
+			void removeTimerListener(ITimerListener* timerListener);
+			void loop(Timer* timer);
+		};
+	}
+}
 
 #endif /* MODELS_ANIMATION_TIMER_H_ */
