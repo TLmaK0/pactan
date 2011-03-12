@@ -12,11 +12,11 @@ namespace opengl{
 	namespace agents{
 		log4cxx::LoggerPtr Agent::logger(log4cxx::Logger::getLogger("opengl.agents.Agent"));
 
-		Agent::Agent(){
+		Agent::Agent(int millisecondsStep){
 			this->fpsAnimation=25;
 			this->_visible=true;
 			this->clockDivider=this->fpsAnimation/CLOCKS_PER_SEC;
-			this->stepLength=GAME_SQUARE_SIDE/this->fpsAnimation;
+			this->stepLength=GAME_SQUARE_SIDE * (1000 / millisecondsStep)/this->fpsAnimation;
 		}
 
 		void Agent::draw(){

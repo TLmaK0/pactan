@@ -2,6 +2,7 @@
 #include "../views/PlayView.h"
 #include "../views/InformationView.h"
 
+#define TIMER_STEP 500
 
 namespace controllers{
 
@@ -28,14 +29,15 @@ namespace controllers{
 		coco->setPlayGround(this->playGround);
 		LOG4CXX_TRACE(logger, "Set coco poss: " << possition.x << "," << possition.y);
 
-		((PlayView*)this->playGroundView)->cocos.push_back(new opengl::agents::Coco());
+		((PlayView*)this->playGroundView)->cocos.push_back(new opengl::agents::Coco(TIMER_STEP));
 		return coco;
 	}
 
 	void PlayController::Start(){
 		this->playGroundView=new PlayView(this,&this->playModel);
 		this->informationView=new InformationView(this,&this->informationModel);
-		this->timer=new Timer(1000);
+		((PlayView*)this->playGroundView)->pactan = new opengl::PacTan(TIMER_STEP);
+		this->timer=new Timer(TIMER_STEP);
 		this->timer->addTimerListener(this);
 		Display::instance()->enable();
 	}
@@ -88,8 +90,8 @@ namespace controllers{
 
 	void PlayController::updateViews(){
 		//Updating view
-		((PlayView*)this->playGroundView)->pactan.setPosition(this->pacTan->getPossition());
-		((PlayView*)this->playGroundView)->pactan.setDirection(this->pacTan->getDirectionAngle());
+		((PlayView*)this->playGroundView)->pactan->setPosition(this->pacTan->getPossition());
+		((PlayView*)this->playGroundView)->pactan->setDirection(this->pacTan->getDirectionAngle());
 
 		int n=0;
 		for(list<models::agents::Coco*>::iterator coco=this->cocos.begin();coco!=this->cocos.end();coco++){

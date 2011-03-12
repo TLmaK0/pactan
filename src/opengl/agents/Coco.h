@@ -17,7 +17,7 @@ namespace opengl{
 		class Coco:public Agent{
 			static log4cxx::LoggerPtr logger;
 		public:
-			Coco();
+			Coco(int millisecondsStep);
 		};
 	}
 }

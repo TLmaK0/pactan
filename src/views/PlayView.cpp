@@ -26,7 +26,7 @@ namespace views{
 	}
 
 	void PlayView::render(){
-		this->pactan.draw();
+		this->pactan->draw();
 
 		for(vector<Coco*>::iterator coco=this->cocos.begin();coco!=this->cocos.end();coco++){
 			(*coco)->draw();

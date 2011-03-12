@@ -44,7 +44,7 @@ namespace opengl{
 		protected:
 			WavefrontObj* wavefrontObj;
 		public:
-			Agent();
+			Agent(int millisecondsStep);
 			virtual ~Agent();
 			void setPosition(Vector3D position);
 			void setStartPosition(Vector3D position);

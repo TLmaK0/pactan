@@ -43,7 +43,7 @@ namespace views{
 	class PlayView: public View{
 		static log4cxx::LoggerPtr logger;
 	public:
-		PacTan pactan;
+		PacTan* pactan;
 		vector<Coco*> cocos;
 		opengl::scene::PlayGround playGround;
 

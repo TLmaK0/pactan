@@ -19,7 +19,7 @@ namespace opengl{
 	class PacTan:public Agent{
 		static log4cxx::LoggerPtr logger;
 	public:
-		PacTan();
+		PacTan(int millisecondsStep);
 	};
 }
 #endif
