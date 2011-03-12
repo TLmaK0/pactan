@@ -39,6 +39,8 @@ namespace models{
 		void Timer::loop(Timer* timer){
 			while(timer != NULL){
 				boost::this_thread::sleep(boost::posix_time::milliseconds(timer->milliseconds_sleep));
+LOG4CXX_DEBUG(logger,"listener loop: " << timer);
+
 				timer->timerEvent();
 			}
 		}

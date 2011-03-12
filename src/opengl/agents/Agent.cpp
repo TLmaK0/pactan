@@ -60,12 +60,6 @@ namespace opengl{
 			Object3D::setPosition(position);
 		}
 
-		void Agent::setStartPosition(Vector3D position){
-			_changePositionTime = clock();
-			_lastPosition = position;
-			Object3D::setPosition(position);
-		}
-
 		bool Agent::isVisible(){
 			return this->_visible;
 		}

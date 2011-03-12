@@ -43,6 +43,7 @@ namespace models{
 		}
 
 		void CountDown::start(){
+			LOG4CXX_DEBUG(logger,"CountDown start: " << this->counter);
 			this->timer->addTimerListener(this);
 		}
 
