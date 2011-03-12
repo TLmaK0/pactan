@@ -16,7 +16,7 @@ namespace opengl{
 			this->fpsAnimation=25;
 			this->_visible=true;
 			this->clockDivider=this->fpsAnimation/CLOCKS_PER_SEC;
-			this->stepLength=GAME_SQUARE_SIDE/this->fpsAnimation * 1.3;
+			this->stepLength=GAME_SQUARE_SIDE/this->fpsAnimation;
 		}
 
 		void Agent::draw(){

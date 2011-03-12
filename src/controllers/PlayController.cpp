@@ -35,7 +35,7 @@ namespace controllers{
 	void PlayController::Start(){
 		this->playGroundView=new PlayView(this,&this->playModel);
 		this->informationView=new InformationView(this,&this->informationModel);
-		this->timer=new Timer(500);
+		this->timer=new Timer(1000);
 		this->timer->addTimerListener(this);
 		Display::instance()->enable();
 	}
