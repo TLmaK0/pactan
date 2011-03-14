@@ -13,7 +13,6 @@ namespace mvc{
 		class IController{
 
 		public:
-			virtual void Start()=0;
 			virtual ~IController(){};
 		};
 

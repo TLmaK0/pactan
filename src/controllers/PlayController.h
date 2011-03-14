@@ -78,7 +78,6 @@ namespace controllers{
 
 	public:
 		PlayController();
-		void Start();
 		void MovePacTanUp();
 		void MovePacTanDown();
 		void MovePacTanLeft();

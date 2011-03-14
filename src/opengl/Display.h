@@ -18,7 +18,6 @@
 #include "../mvc/events/IPaintListener.h"
 #include "../mvc/events/IKeyEvent.h"
 #include "../mvc/events/KeyEvent.h"
-
 #define WINDOW_NAME "Pac-Tan"
 
 

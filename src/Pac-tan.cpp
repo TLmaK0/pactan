@@ -20,7 +20,7 @@ LoggerPtr logger(Logger::getLogger("Main"));
 
 void startSound(){
 	OggPlayer ogg;
-	ogg.open("resources/audio/soundtracks/flatwound_-_The_Long_Goodbye.ogg");
+	ogg.open("resources/audio/soundtracks/Dragan_Espenschied_-_06_-_hrvat.ogg");
 	ogg.play();
 	ogg.close();
 }
@@ -34,7 +34,6 @@ int main(int argc, char *argv[]) {
 
 
 	PlayController *playController=new PlayController();
-	playController->Start();
 
 
 	return 0;

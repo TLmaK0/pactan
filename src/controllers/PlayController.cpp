@@ -20,6 +20,14 @@ namespace controllers{
 
 		nextLevel();
 
+		this->playGroundView=new PlayView(this,&this->playModel);
+		this->informationView=new InformationView(this,&this->informationModel);
+		((PlayView*)this->playGroundView)->pactan = new opengl::PacTan(TIMER_STEP);
+
+		this->timer=new Timer(TIMER_STEP);
+		this->timer->addTimerListener(this);
+
+		Display::instance()->enable();
 	}
 
 	models::agents::Coco* PlayController::getNewCoco(){
@@ -31,15 +39,6 @@ namespace controllers{
 
 		((PlayView*)this->playGroundView)->cocos.push_back(new opengl::agents::Coco(TIMER_STEP));
 		return coco;
-	}
-
-	void PlayController::Start(){
-		this->playGroundView=new PlayView(this,&this->playModel);
-		this->informationView=new InformationView(this,&this->informationModel);
-		((PlayView*)this->playGroundView)->pactan = new opengl::PacTan(TIMER_STEP);
-		this->timer=new Timer(TIMER_STEP);
-		this->timer->addTimerListener(this);
-		Display::instance()->enable();
 	}
 
 	void PlayController::MovePacTanUp(){
